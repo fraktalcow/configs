@@ -1,0 +1,132 @@
+keymaps.txt
+
+Navigation & System Commands
+.. → cd ..
+... → cd ../..
+.... → cd ../../..
+~ → cd ~
+c → clear
+r → ranger
+stfu → shutdown 0
+cd → cd && ls (enhanced cd to list directory after changing)
+
+# NixOS Commands
+
+rebuild → sudo nixos-rebuild switch --upgrade
+rebuild-test → sudo nixos-rebuild test
+rebuild-boot → sudo nixos-rebuild boot
+rebuild-flake → sudo nixos-rebuild switch --flake .#
+nix-search → nix search nixpkgs
+nix-install → nix-env -iA nixpkgs.
+nix-remove → nix-env -e
+nix-list → nix-env -q
+nix-upgrade → nix-env -u
+nix-clean → sudo nix-collect-garbage -d
+nix-clean-big → sudo nix-store --gc --print-dead | xargs du -sh
+nix-optimize → sudo nix-store --optimise
+flake-update → nix flake update
+flake-rebuild → sudo nixos-rebuild switch --flake .#
+dev-shell → nix-shell
+enter-flake → nix develop
+shell-check → nix-shell --run bash
+nix-shell-exit → exit
+nix-info → nix-info -m
+nix-show-gen → ls -l /nix/var/nix/profiles/system-*
+nix-which → nix-instantiate --find-file
+nix-logs → journalctl -xe --no-pager | grep nix
+nix-channel-update → sudo nix-channel --update
+nix-channel-list → nix-channel --list
+
+#i3
+ 
+Application Launching
+
+$mod+Return → Open terminal (alacritty)
+$mod+d → Open application launcher (rofi)
+$mod+b → Open Firefox
+$mod+e → Open VS Code
+$mod+Shift+f → Open Thunar (file manager)
+Window Control & Navigation
+$mod+q → Close focused window
+$mod+h / $mod+Left → Focus left
+$mod+j / $mod+Down → Focus down
+$mod+k / $mod+Up → Focus up
+$mod+l / $mod+Right → Focus right
+Window Movement
+$mod+Shift+h → Move window left
+$mod+Shift+j → Move window down
+$mod+Shift+k → Move window up
+$mod+Shift+l → Move window right
+Window Splitting
+$mod+Ctrl+h → Split horizontal
+$mod+Ctrl+v → Split vertical
+
+Layout & Display
+
+$mod+f → Toggle fullscreen
+$mod+u → Stacking layout
+$mod+i → Tabbed layout
+$mod+o → Toggle split layout
+$mod+Shift+space → Toggle floating mode
+$mod+space → Toggle focus mode
+$mod+a → Focus parent
+$mod+c → Focus child
+Scratchpad
+$mod+Shift+minus → Move window to scratchpad
+$mod+minus → Show scratchpad window
+Workspace Management
+$mod+1 to $mod+0 → Switch to workspace 1-10
+$mod+Shift+1 to $mod+Shift+0 → Move focused window to workspace 1-10
+$mod+m → Move workspace to the right monitor
+$mod+Shift+m → Move workspace to the left monitor
+Configuration & Session Control
+$mod+Shift+r → Restart i3
+$mod+Shift+e → Exit i3 (confirmation prompt)
+
+Resize Mode
+
+$mod+r → Enter resize mode
+h / Left → Shrink width
+j / Down → Grow height
+k / Up → Shrink height
+l / Right → Grow width
+Shift+h → Shrink width (small step)
+Shift+j → Grow height (small step)
+Shift+k → Shrink height (small step)
+Shift+l → Grow width (small step)
+Return / Escape → Exit resize mode
+Miscellaneous
+$mod+Shift+x → Lock screen (i3lock-fancy)
+$mod+Shift+g → Set inner gaps to 10px, outer gaps to 5px
+$mod+g → Remove all gaps
+
+# TMUX
+Window Navigation
+
+M-n → Create new window
+M-w → Kill current window
+M-1 → Switch to window 1
+M-2 → Switch to window 2
+M-3 → Switch to window 3
+M-4 → Switch to window 4
+M-5 → Switch to window 5
+M-6 → Switch to window 6
+M-7 → Switch to window 7
+M-8 → Switch to window 8
+M-9 → Switch to window 9
+M-p → Previous window
+M-n → Next window 
+
+Pane Management
+
+M-v → Split pane vertically
+M-h → Split pane horizontally
+M-q → Kill current pane
+M-z → Zoom pane
+
+Pane Navigation (Alt + Arrow Keys)
+
+M-Left → Move focus to the left pane
+M-Right → Move focus to the right pane
+M-Up → Move focus to the upper pane
+M-Down → Move focus to the lower pane
